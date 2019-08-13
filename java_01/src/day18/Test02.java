@@ -18,6 +18,7 @@ public class Test02 {
 
 		List<Student> list = new ArrayList<Student>();
 		
+		
 		list.add(new Student("홍순이", 88, 99));
 		list.add(new Student("차순이", 82, 93));
 		list.add(new Student("고순이", 80, 91));
@@ -168,7 +169,7 @@ class Student extends Object implements Comparable<Student> { //sort하려면 im
 	@Override
 	public int compareTo(Student o) {
 		// TODO Auto-generated method stub
-		return name.compareTo(o.name);
+		return this.name.compareTo(o.name);
 	}
 
 }
