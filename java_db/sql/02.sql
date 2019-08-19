@@ -245,7 +245,7 @@ select sysdate ,to_char(sysdate,'YY') from dual;
 select sysdate ,to_char(sysdate,'day') from dual;
 
 --emp 테이블에서 사원들의 입사월
-select ename,hiredate, to_char(hiredate,'mm')as 입사월 from emp;
+select ename,hiredate, to_char(hiredate,'mm')as 입사월 from emp; 
 
 select sysdate ,to_date('2019/08/14') from dual
 
