@@ -60,11 +60,15 @@ title varchar2(30),
 author varchar2(30),
 pubdate date
 );
+
 alter table book add(price number(7)); //구조 변경 컬럼 추가
 alter table book modify(price number(7,2));
-alter table book drop column price; //price colum삭제
+alter table book drop column price; //price column삭제
 rename book to book2;
 rename book2 to book;
+
+alter table emp2 rename column deptno to deptnono;// column의 이름 변경
+
 
 insert into book (bookno,title,author,pubdate) values(4,'db',null,null);
 delete from book where author = '홍';
@@ -137,9 +141,11 @@ alter table dept2 add CONSTRAINT dept2_pk primary key(deptno);
 
 drop table emp2;
 create table emp2 as select * from emp;
+##################################################################
 alter table emp2 add CONSTRAINT emp2_pk primary key(empno);
 alter table emp2 add foreign key(deptno) references dept2;
 alter table emp2 add foreign key(mgr) references emp2;
+###################################################################
 
 select * from dept2;
 insert into dept2 values (50,'EDU','SEOUL');
@@ -151,6 +157,9 @@ insert into emp2(empno,ename,hiredate,sal,deptno,mgr) values(8888,'이길동',sy
 
 drop table emp2 cascade CONSTRAINT;
 drop table dept2 cascade CONSTRAINT;
+
+CASCADE: 참조되는 테이블의 행이 삭제되었을 경우에는 참조하는 테이블과 대응되는 모든 행들이 삭제된다. 참조되는 테이블의 행이 갱신되었을 경우에는 참조하는 테이블의 외래 키 값은 같은 값으로 갱신된다.
+RESTRICT: 참조하는 테이블의 행이 남아 있는 경우에는 참조되는 테이블의 행을 갱신하거나 삭제할 수 없다. 이 경우에는 데이터 변경이 이루어지지 않는다.
 
 #########################################################
 트랙잭션 멀티스레드와 비슷한 개념 한군데에서 사용하고 commit이나 rollback을 안하면 다른곳에서 쓰기 작업이 불가하다.
