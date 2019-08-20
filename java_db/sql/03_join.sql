@@ -210,16 +210,16 @@ group by dname,emp.deptno
 having avg(sal)>2000
 order by 1;
 
-#######################
-select
-from
-where
-group by
-having
-order by
-#######################
+#####################
+# select			#
+# from				#
+# where				#
+# group by			#
+# having			#
+# order by			#
+#####################
 
-select emp.deptno, dname, round(avg(sal))
+select emp.deptno, dname, round(avg(sal)) as 평균급여
 from emp 
 	join dept
 	on emp.deptno = dept.deptno
@@ -266,7 +266,19 @@ from emp
 where sal in (select min(sal)
 			from emp
 			group by emp.deptno);
+			
+##각각의 부서에서 많은 급여를 받는 사람의 리스트		
+select *
+from emp
+where sal in (select max(sal)
+			from emp
+			group by emp.deptno);
 
+select deptno,ename,sal
+from emp
+where (deptno,sal) 
+in(select deptno,max(sal) from emp group by deptno);
+			
 ##########################################
 상관관계 서브쿼리 : outer 쿼리의 컬럼중 하나가 inner 쿼리문에서 사용되는 쿼리문
 ##########################################
@@ -306,3 +318,32 @@ from (select * from emp order by sal desc)
 where rownum between 4 and 7;
 --rownum이 1도 안만들어져서 4보다 큰거는 불가, 1부터 접근하는거는 가능하지만 중간부터 접근 불가
 #################################################################
+--page처리할떄 필요한 구문
+select * from (
+select rownum as row#,ename,sal,hiredate
+from (select * from emp order by sal desc)
+)
+where row# between 11 and 15;
+#################################################################
+
+
+				start	end 
+1page 1~5		5*0+1	+5
+2page 6~10		5*1+1	+5
+3page 11~15		5*2+1	+5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

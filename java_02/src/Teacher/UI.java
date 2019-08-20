@@ -30,7 +30,6 @@ public class UI extends JFrame {
 	Socket socket = null;
 	BufferedReader br = null;
 	PrintWriter pw = null;
-	boolean endflag = false;
 	
 	UI(){
 		Panel p1 = new Panel();
