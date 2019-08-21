@@ -123,7 +123,7 @@ price number(7,2) check(price>0),
 pubdate date default sysdate
 );
 
-alter table book add CONSTRAINT book_bookno_pk primary key(bookno);
+alter table book add CONSTRAINT book_bookno_pk primary key(bookno,author);
 alter table book drop CONSTRAINT book_bookno_pk;
 
 insert into book (bookno,title,author,price,pubdate) values(1,null,'김길동',32000,default);
@@ -143,8 +143,20 @@ drop table emp2;
 create table emp2 as select * from emp;
 ##################################################################
 alter table emp2 add CONSTRAINT emp2_pk primary key(empno);
-alter table emp2 add foreign key(deptno) references dept2;
-alter table emp2 add foreign key(mgr) references emp2;
+
+alter table emp2 add CONSTRAINT emp2_fk_mgr foreign key(mgr) references emp2;
+
+alter table emp2 add CONSTRAINT emp2_fk1 foreign key(deptno) references dept2;
+delete from dept2 where deptno=20; X 외래키 걸려있음
+
+alter table emp2 drop CONSTRAINT emp2_fk1;
+alter table emp2 add CONSTRAINT emp2_fk1 foreign key(deptno) references dept2 ON DELETE SET NULL; 삭제되는 자식은 null로 바꿔라
+
+alter table emp2 add CONSTRAINT emp2_fk1 foreign key(deptno) references dept2 ON DELETE cascade; 삭제되고 자식도 삭제
+delete from dept2 where deptno=20;
+select * from emp2;
+
+delete from dept where deptno=50;
 ###################################################################
 
 select * from dept2;
@@ -174,7 +186,8 @@ delete from emp2 where deptno=10;
 update emp2 set comm=0 where deptno=10;
 block 되는 거 확인 => 창1에서 commit or rollback 명령 수행하면 lock 풀림
 
-
+transaction 하나의 작업으로 처리되는 논리적 작업단위 트랜잭션의 종료는 commit,rollback을 의미한다.
+oracle lock = java synchronized와 같다.
 
 
 
