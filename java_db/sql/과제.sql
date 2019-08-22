@@ -2,7 +2,7 @@ drop table board;
 drop table users;
 
 CREATE TABLE board (
-    seq       INTEGER NOT NULL,
+    seq       INTEGER NOT NULL constraint add user_id primary key;
     title     VARCHAR2(50),
     content   VARCHAR2(1000),
     regdate   DATE,
