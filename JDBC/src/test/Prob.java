@@ -25,12 +25,10 @@ public class Prob {
 		
 			rs = ps.executeQuery();
 			
-			if(rs.next()) {
+			while(rs.next()) {
 				System.out.println(rs.getString("avg(e.salary)"));
 			}
-			else {
-				System.out.println("없는 부서입니다.");
-			}
+		
 			
 		} catch (Exception e) {
 			e.printStackTrace();
