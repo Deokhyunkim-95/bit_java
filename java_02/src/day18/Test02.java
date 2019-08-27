@@ -49,6 +49,10 @@ public class Test02 {
 		}
 
 		System.out.println("학생 list 출력");
+		for(Student data : list) {
+			System.out.println(data);
+		}
+		System.out.println("====================");
 		it = list.iterator();
 		while (it.hasNext()) {
 			Student data = it.next();
@@ -56,6 +60,7 @@ public class Test02 {
 		}
 
 		System.out.println("**** 학생 " + s1 + "정보삭제  ****");
+		
 		it = list.iterator();
 		while (it.hasNext()) {
 			Student data = it.next();

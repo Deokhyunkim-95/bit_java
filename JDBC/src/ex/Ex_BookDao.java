@@ -1,12 +1,13 @@
 package ex;
 
+import java.util.Iterator;
+
 import DAO.BookDao;
-import VO.Book;
+import VO.BookVO;
 
 public class Ex_BookDao {
 	public static void main(String[] args) {
 		BookDao dao = new BookDao();
-		Book book = new Book();
 		
 //		dao.insertBook(new Book(4,"html","홍길동",31200));
 //		
@@ -16,14 +17,19 @@ public class Ex_BookDao {
 //		dao.updateBook(book);
 //		
 		
-		book.setBookName("j");
+//		book.setBookName("j");
 //		dao.deleteBook(book);
 		
-		dao.searchBook(book);
 		
 		
-		dao.getAllBookRec().forEach(i -> System.out.println(i));
-	
-
+		dao.searchBook("h");
+		
+		dao.getBookRec().forEach(i -> System.out.println(i));
+		
+				
+//		for(BookVO data : dao.getBookRec()) {
+//			System.out.println(data);
+//		}
+		
 	}
 }

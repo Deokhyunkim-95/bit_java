@@ -12,6 +12,7 @@ public class Test03 {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
+			e.printStackTrace();
 			System.out.println("예 외 발 생 : " + e.getMessage());
 		} finally {
 			System.out.println("finally { 자원 반납 코드 } ");

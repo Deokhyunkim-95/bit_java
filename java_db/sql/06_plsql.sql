@@ -89,8 +89,8 @@ exec BookInsertOrUpdate(1,'db','비트',200);
 ##########################################
 FUNCTION
 ########################################
-CREATE OR REPLACE FUNCTION fn1(
-    price NUMBER) RETURN INT
+CREATE OR REPLACE FUNCTION fn1(price NUMBER) 
+	RETURN INT
   IS
      myInterest NUMBER;
   BEGIN

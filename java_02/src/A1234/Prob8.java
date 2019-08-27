@@ -21,6 +21,10 @@ public class Prob8 {
 			System.out.println(data);
 		}
 		
+//		for(User data : list) {
+//			System.out.println(data);
+//		}
+		
 	}
 }
 class User extends Object implements Comparable<User>,Serializable{

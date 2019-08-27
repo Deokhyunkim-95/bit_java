@@ -17,7 +17,7 @@ public class Test09_update {
 		int count = ddo.updateDept(dept);
 		System.out.println(count+":update");
 		
-		ddo.getAllDeptRec();
+		ddo.getDeptRec();
 		
 	}
 }

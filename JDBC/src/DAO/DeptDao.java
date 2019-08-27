@@ -13,7 +13,7 @@ import util.JDBCUtil;
 public class DeptDao {
 	
 	//Dept 테이블의 모든 레코드 정보
-	public List<Dept> getAllDeptRec() {
+	public List<Dept> getDeptRec() {
 		String sql = "select * from dept order by deptno";
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -29,12 +29,53 @@ public class DeptDao {
 			
 			//실행 및 결과값 핸들링
 			rs = ps.executeQuery();
+//			System.out.println(rs.getMetaData().getColumnName(1));
 			while(rs.next()) {
 				//low mapper작업
 				list.add(new Dept(rs.getInt("deptno"),rs.getString("dname"),rs.getString("loc")));
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+//			JDBCUtil.close(con, ps, rs);
+		}
+		return list;
+	}
+	
+	public List<Dept> getDeptRec(int page,int n) { //n = 한페이지에 몇개씩 출력할건지
+		
+		String sql = "select * from( "+
+				"select rownum as row#, deptno , dname ,loc "+ 
+				"from( select * from dept order by deptno) "+
+				") where row# between ? and ?";
+		
+		int start = n*(page-1)+1;
+		int end = start+(n-1);
+		
+		
+		
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		List<Dept> list = new ArrayList<Dept>();
+
+		try {
+			System.out.println("********* con 할당 *********");
+			con = JDBCUtil.getConnection();
+			ps = con.prepareStatement(sql);
+			// ? 세팅
+			ps.setInt(1, start);
+			ps.setInt(2, end);
+			//실행 및 결과값 핸들링
+			rs = ps.executeQuery();
+//			System.out.println(rs.getMetaData().getColumnName(1));
+			while(rs.next()) {
+				//low mapper작업
+				list.add(new Dept(rs.getInt("deptno"),rs.getString("dname"),rs.getString("loc")));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			JDBCUtil.close(con, ps, rs);
 		}
@@ -68,6 +109,8 @@ public class DeptDao {
 		}
 		return result;
 	}
+	
+	
 
 	public int updateDept(Dept dept) {
 		String sql = "update dept set dname=?,loc=? where deptno=?";

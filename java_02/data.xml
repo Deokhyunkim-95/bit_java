@@ -3,7 +3,7 @@
 <properties>
 <comment>DB Info</comment>
 <entry key="user">SCOTT</entry>
-<entry key="url">jdbc:oracle:thin:@127.0.0.1:1521</entry>
+<entry key="url">jdbc:oracle:thin:@127.0.0.1:1521:xe</entry>
 <entry key="tomcatver">9</entry>
 <entry key="pw">TIGER</entry>
 <entry key="oraclever">11g</entry>

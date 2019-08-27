@@ -48,7 +48,7 @@ public class Test01 {
 		
 		System.out.println("====list 다루기====");
 		System.out.println(list);
-		System.out.println(list.contains("아길동")); //contains로 list에 아길동이 있는지 찾는다.
+		System.out.println(list.contains("이길동")); //contains로 list에 아길동이 있는지 찾는다.
 		
 		for(int i = 0 ; i<list.size();i++) {
 			System.out.println(list.get(i).charAt(0)+"**");
