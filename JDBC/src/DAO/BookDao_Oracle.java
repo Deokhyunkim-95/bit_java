@@ -134,7 +134,6 @@ public class BookDao_Oracle extends BookDao{
 		Connection con = null;
 		ResultSet rs = null;
 		PreparedStatement ps = null;
-		String a= null;
 		List<BookVO> list = new ArrayList<BookVO>();
 
 		try {
@@ -147,11 +146,6 @@ public class BookDao_Oracle extends BookDao{
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
-//				System.out.print(rs.getInt("bookid")+" ");
-//				System.out.print(rs.getString("bookname")+" ");
-//				System.out.print(rs.getString("publisher")+" ");		
-//				System.out.print(rs.getInt("price")+" ");
-//				System.out.println();
 				
 				list.add(new BookVO(rs.getInt("bookid"),rs.getString("bookname"),rs.getString("publisher"),rs.getInt("price")));
 			}

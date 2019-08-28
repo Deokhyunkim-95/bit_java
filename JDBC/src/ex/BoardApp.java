@@ -24,44 +24,46 @@ import javax.swing.JLabel;
 
 import DAO.BoardDao;
 import DAO.UserDao;
+import VO.BoardVO;
 import VO.UserVO;
+import service.BoardServiceimpl;
 import service.UserServiceImpl;
 
 public class BoardApp {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		new Gui1();
+		new Gui2();
 	}
 }
 
 class Gui2 extends JFrame {
 	BoardDao board = new BoardDao();
-//	UserVO vo = new UserVO();
-	UserServiceImpl service = new UserServiceImpl(board);
-	
-	JButton insert, update, login, exit;
-	TextField PASSWORD, ROLE, ID,NAME;
-	
+	BoardServiceimpl service = new BoardServiceimpl(board);
+
+	JButton insert, update, delete,search, exit;
+	TextField TITLE, CONTENT, CNT, ID;
+
 	TextArea output;
 
 	Gui2() throws FileNotFoundException {
 		Panel p1 = new Panel();
 		p1.add(insert = new JButton("등록"));
 		p1.add(update = new JButton("수정"));
-		p1.add(login = new JButton("로그인"));
+		p1.add(delete = new JButton("삭제"));
+		p1.add(search = new JButton("검색"));
 		p1.add(exit = new JButton("종료"));
 		add(p1, BorderLayout.SOUTH);
 
 		Panel p2 = new Panel();
 		p2.setLayout(new GridLayout(4, 2));
-		p2.add(new JLabel("   ID   "));
+		p2.add(new JLabel("   Title   "));
+		p2.add(TITLE = new TextField(20));
+		p2.add(new JLabel("  Content  "));
+		p2.add(CONTENT = new TextField(20));
+		p2.add(new JLabel("  Cnt  "));
+		p2.add(CNT = new TextField(20));
+		p2.add(new JLabel("  ID "));
 		p2.add(ID = new TextField(20));
-		p2.add(new JLabel("  PASSWORD  "));
-		p2.add(PASSWORD = new TextField(20));
-		p2.add(new JLabel(" NAME "));
-		p2.add(NAME = new TextField(20));
-		p2.add(new JLabel("  ROLE  "));
-		p2.add(ROLE = new TextField(20));
 		add(p2, BorderLayout.NORTH);
 
 		add(output = new TextArea(15, 50));
@@ -71,35 +73,56 @@ class Gui2 extends JFrame {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+		insert.addActionListener(e -> {
+			BoardVO vo = new BoardVO();
+
+			vo.setTitle(TITLE.getText());
+			vo.setContent(CONTENT.getText());
+			vo.setCnt(CNT.getText());
+			vo.setId(ID.getText());
+
+			board.insertBoard(vo);
+		});
 		update.addActionListener(e -> {
-			UserVO vo = new UserVO();
-			
+			BoardVO vo = new BoardVO();
+
+			vo.setTitle(TITLE.getText());
+			vo.setContent(CONTENT.getText());
+			vo.setCnt(CNT.getText());
 			vo.setId(ID.getText());
-			vo.setName(NAME.getText());	
-			vo.setPassword(PASSWORD.getText());
-			vo.setRole(ROLE.getText());
-			
-			user.UpdateUser(vo);
+
+			if(board.UpdateBoard(vo)>0) {
+				output.setText(board.UpdateBoard(vo)+"개가 수정되었습니다.");
+			}
+			else
+				output.setText("업데이트 실패");
 		});
-		insert.addActionListener(e -> {	
-			UserVO vo = new UserVO();
-			
+		delete.addActionListener((e) -> {
+			BoardVO vo = new BoardVO();
+
+			vo.setTitle(TITLE.getText());
+			vo.setContent(CONTENT.getText());
+			vo.setCnt(CNT.getText());
 			vo.setId(ID.getText());
-			vo.setName(NAME.getText());
-			vo.setPassword(PASSWORD.getText());
-			vo.setRole(ROLE.getText());
 			
-			user.insertUser(vo);
+			board.DeleteBoard(vo);	
+			if(board.DeleteBoard(vo)>0) {
+				output.setText(board.DeleteBoard(vo)+"개가 삭제되었습니다.");
+			}
+			else
+				output.setText("삭제 실패");
+			
 		});
-		login.addActionListener((e) -> {
-			UserVO vo = new UserVO();
-			
+		search.addActionListener((e) -> {
+			BoardVO vo = new BoardVO();
+
+			vo.setTitle(TITLE.getText());
+			vo.setContent(CONTENT.getText());
+			vo.setCnt(CNT.getText());
 			vo.setId(ID.getText());
-//			vo.setName(NAME.getText());
-			vo.setPassword(PASSWORD.getText());
-//			vo.setRole(ROLE.getText());
 			
-			System.out.println(user.LoginUser(vo));
+			board.SearchBoard(TITLE.getText()).forEach(i->output.append(i+"\n"));
+			
 			
 		});
 		exit.addActionListener(e -> System.exit(0));

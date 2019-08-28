@@ -1,10 +1,11 @@
-import java.util.List;
+package service;
 
 import VO.BoardVO;
 
 public interface BoardService {
 
-	List<BookVO> booklist();
-	
+	int insertBoard(BoardVO board);
+	int UpdateBoard(BoardVO board);
+	int DeleteBoard(BoardVO board);
 	
 }
