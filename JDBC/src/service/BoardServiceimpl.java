@@ -2,8 +2,8 @@ package service;
 
 import java.util.List;
 
-import DAO.BoardDao;
-import VO.BoardVO;
+import dao.BoardDao;
+import vo.BoardVO;
 
 public class BoardServiceimpl implements BoardService{
 

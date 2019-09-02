@@ -5,8 +5,8 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import VO.Employee;
 import util.JDBCUtil;
+import vo.Employee;
 
 //JDBC는 autocommit
 public class Test07_Insert {

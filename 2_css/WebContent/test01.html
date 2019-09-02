@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width = device-width, initial-scale=1"> 
+
+<title>teset01 css</title>
+<style type="text/css">
+	body{
+		/* background-color: gray;*/
+		}
+	h1{
+		color:blue;	
+	}
+	#hb { background-color: black;
+		color: white;
+		border: 2px solid red;
+		}
+	.r{
+		color:orange;
+	}
+	div p.r{
+		background-color: red;
+	}
+	
+	body > p.r{
+		background-color: blue;
+	}
+	<!-- p안에 있는 r -->
+	body,h1 {
+		/*margin: 30px;
+		padding: 10px;*/
+	}
+	#hc{
+		border :2px dotted red;
+		background-color: yellow;
+		text-align: center;
+		
+	}
+	h1,h2,h3,h4,h5{
+		color: blue;
+		font-family: cursive;
+	}
+	
+	p:nth-child(even) {
+		background-color: yellow;
+		}
+	h1:hover{
+		text-align: center;
+		color: black;
+	}
+	a {
+	display: block;
+	background-color: yellow;
+	text-align: center;
+	text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	img{
+		display: block;
+	}
+	
+}
+	<!-- display로 inline속성에서 block으로 바꿔줌 -->
+</style>
+</head>
+<body>
+
+<a href="/1_html"> 1_html 예제</a>
+<h1 class="r">css 선택 기본1</h1>
+<h2>css 선택 기본2</h2>
+<h3 id = "hb">css 선택 기본3</h3>
+<h4 id = "hc">css 선택 기본4</h4>
+<h5 class="r">css 선택 기본5</h5>
+
+<div>
+	<p>CSS is a language that describes the style of an HTML document.</p>
+	<p class="r">CSS describes how HTML elements should be displayed.</p>
+	<p>This tutorial will teach you CSS from basic to advanced.</p>
+</div>
+	<p>CSS is a language that describes the style of an HTML document.</p>
+	<p class="r">CSS describes how HTML elements should be displayed.</p>
+	<p>This tutorial will teach you CSS from basic to advanced.</p>
+	
+	CSS is a language that describes the style of an HTML document.
+	CSS describes how HTML elements should be displayed.
+	This tutorial will teach you CSS from basic to advanced.
+	<img alt="" src="./img/KakaoTalk_20190828_134938628.jpg" width="100" height="100" >
+	CSS is a language that describes the style of an HTML document.
+	CSS describes how HTML elements should be displayed.
+	This tutorial will teach you CSS from basic to advanced.
+</body>
+</html>

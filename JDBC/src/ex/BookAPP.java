@@ -23,9 +23,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import DAO.BookDao;
-import VO.BookVO;
+import dao.BookDao;
 import service.BookServiceImpl;
+import vo.BookVO;
 
 public class BookAPP {
 

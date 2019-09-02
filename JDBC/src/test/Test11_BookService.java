@@ -5,10 +5,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import DAO.BookDao;
-import VO.BookVO;
+import dao.BookDao;
 import service.BookService;
 import service.BookServiceImpl;
+import vo.BookVO;
 
 public class Test11_BookService {
 

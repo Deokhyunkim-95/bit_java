@@ -22,9 +22,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import DAO.UserDao;
-import VO.UserVO;
+import dao.UserDao;
 import service.UserServiceImpl;
+import vo.UserVO;
 
 public class UserApp {
 

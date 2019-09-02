@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width = device-width, initial-scale=1"> 
+
+<title>regex</title>
+</head>
+<body>
+<h3>정규표현식</h3>
+<form action = " " method="get">
+	<fieldset>
+		<legend>~~~~~</legend>
+		
+		<div>
+			<label for ="id">ID</label>
+			<input type="text" id = "id" name = "id" placeholder="아이디입력" required="required" pattern="[a-zA-Z].+[0-9]">
+		</div>
+	</fieldset>
+	
+	<input type = "submit">
+	<input type = "reset">
+	
+</form>
+<hr>
+<form action = " " method="get">
+	<fieldset>
+		<legend>~~~~~</legend>
+		
+		<div>
+			<label for ="id">ID1</label>
+			<input type="text" id = "id" name = "id" placeholder="아이디입력" required="required" pattern="[a-zA-Z].+\d{2}">
+			<!-- 숫자2개 붙어야한다. -->
+		</div>
+	</fieldset>
+	
+	<input type = "submit">
+	<input type = "reset">
+</form>
+
+<hr>
+<form action = " " method="get">
+	<fieldset>
+		<legend>~~~~~</legend>
+		
+		<div>
+			<label for ="id">ID2</label>
+			<input type="text" id = "id" name = "id" placeholder="아이디입력" 
+			required="required" pattern="[a-zA-Z}.+\w{6,12}" title="id 영문자 숫자로 6~12글자">
+			<!-- 6글자에서~12글자 -->
+		</div>
+	</fieldset>
+	
+	<input type = "submit">
+	<input type = "reset">
+</form>
+</body>
+</html>

@@ -3,9 +3,9 @@ package test;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-import DAO.DeptDao;
-import VO.Dept;
+import dao.DeptDao;
 import util.JDBCUtil;
+import vo.Dept;
 
 public class Test09_update {
 	public static void main(String[] args) {

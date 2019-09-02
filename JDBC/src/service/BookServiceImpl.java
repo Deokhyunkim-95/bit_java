@@ -2,8 +2,8 @@ package service;
 
 import java.util.List;
 
-import DAO.BookDao;
-import VO.BookVO;
+import dao.BookDao;
+import vo.BookVO;
 
 public class BookServiceImpl implements BookService{
 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width = device-width, initial-scale=1"> 
+
+<title>form test</title>
+</head>
+<body>
+<form action = "#" method="get">
+<fieldset>
+<legend>의견돌리기</legend>
+	<p>
+	<label for = " name "> 작성자 </label>
+	<input type = "text" id= " name" name ="name" value=" 작성자">
+	</p>
+	<p>
+	<label for = " email "> email </label>
+	<input type = "email" id= " email" name ="email" required>
+	</p>
+	<p>
+	<label for = " date "> 예약날짜 </label>
+	<input type = "date" id= " date" name ="date" required>
+	</p>
+	<p>
+	<label for = " contents "> 내용 </label>
+	<textarea name = "contents" id = " contents" col="60" rows="10"  ></textarea>
+	</p>
+	<p>
+	<label for = " loc "> 지 역 선 택 </label>
+	<select name = "loc" id="loc">
+		<option value = "서울">서울</option>
+		<option value = "대전">대전</option>
+		<option value = "대구">대구</option>
+		<option value = "부산">부산</option>
+		<option value = "광주">광주</option>
+	</select>
+	</p>
+	<p>
+	<span>취미</span>
+	<label>여행<input type ="checkbox" name ="hobby" value="여행"></label>
+	<label>독서<input type ="checkbox" name ="hobby" value="독서"></label>
+	<label>운동<input type ="checkbox" name ="hobby" value="운동"></label>
+	</p>
+</fieldset>
+	<div>
+	<label for = " name "> 작성자 </label>
+	<input type = "text" id= " name" name ="name" value=" 작성자">
+	</div>
+	<div>
+	<label for = " contents "> 내용 </label>
+	<textarea name = "contents" id = " contents" col="60" rows="10"  ></textarea>
+	</div>
+	
+	<input type="hidden" id = "h" name= "h" value="hiddden data">
+	<input type="submit" value="올리기">
+	<input type="reset">
+</form>
+
+<hr>
+<hr>
+
+<form>
+
+</form>
+<a href="./index.html">HOME 으로</a>
+</body>
+</html>

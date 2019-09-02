@@ -2,8 +2,8 @@ package test;
 
 import java.util.List;
 
-import DAO.DeptDao;
-import VO.Dept;
+import dao.DeptDao;
+import vo.Dept;
 
 public class Test09_DeptDao {
 	public static void main(String[] args) {

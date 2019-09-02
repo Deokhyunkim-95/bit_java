@@ -1,7 +1,8 @@
 package service;
 
 import java.util.List;
-import VO.BookVO;
+
+import vo.BookVO;
 
 public interface BookService {
 

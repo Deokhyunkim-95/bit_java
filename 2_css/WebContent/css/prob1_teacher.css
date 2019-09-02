@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
+
+@media screen and (max-width:1000px){
+		body{
+			background-color: #e7ecdf;			
+		}
+}
+@media screen and (max-width:600px){
+		body{
+			background-color: orange;			
+		}
+}
+
+  h1,h2,h3,h4,h5,h6{
+  	font-family: 'Caveat', cursive; /* 앞에가 안되면 뒤에있는걸로 실행함*/
+  }
+  
+  hgroup h1{
+  	text-align: center;
+  }
+	
+header{
+	width:100%;
+	height:4em;
+	position: relative;
+}
+	  
+  hgroup h2{
+  	position: absolute;
+	right: 0px;
+	top: -30px;
+  }
+  
+  nav{
+  	width: 100%;
+  	height: 3em;
+  	line-height :3em;
+  	background-color: black;
+  	color : white;
+  	
+  	
+  }
+  nav ul{
+  	margin: 0px;
+  }
+  nav ul li {
+  	display: inline;
+  	padding: 10px;
+  }
+  ul{
+  list-style: none;
+  }
+  nav ul{
+  	list-style: none;
+  	text-align: center;
+  }
+  nav ul li a {
+  	text-decoration: none;
+  	color: white;
+  	font-weight: bold;
+  }  
+  #current{
+  	color: red;
+  }
+  a:hover {
+	text-decoration: underline;
+ }
+
+.current{
+	position: relative;
+}
+ .menubar li ul{
+ 	background: gray;
+	visibility:hidden;  /* 평상시에는 서브메뉴가 안보이게 하기 */
+	height:auto;
+	padding:0px;
+	margin:0px;
+	border:0px;
+	position:absolute;
+	width:100px;
+	left : 0;
+ }
+ .menubar li ul li{
+ 	display: block;
+ 	width:auto;
+ 	margin: 0px;
+ }
+ .menubar li:hover ul {
+	visibility: visible;   /* 마우스 커서 올리면 서브메뉴 보이게 하기 */
+}
+section{
+	width: 60%;
+	min-height:500px;
+	max-width:600px;
+	/*background-color : 0 auto;*/
+	float: left;
+	
+} 
+#l{
+	width: 20%;
+	float: left;
+} 
+#r{
+	width: 20%;
+	float: right;
+}  
+a.btn  {
+	display : block;
+	text-align:center;
+	width: 100px;
+	height: 40px;
+	border: 1px solid gray;
+	border-radius: 15px;
+	line-height: 40px;
+	text-decoration: none;
+	color: black;
+	background-color: gray;
+	font-weight: bolder;
+	font-size: 1.2em;
+	margin: 0 auto;
+}
+
+a.btn:hover {
+	color: red;
+	text-shadow: 10px 10px 10px white;
+}
+img{
+	width: 300px;
+	height: 300px;
+} 
+footer {
+	clear:both;
+	width : 100%;
+	height : 3em;
+	line-height :3em;
+	background-color: black;
+	color : white;
+	text-align: left;
+	
+}

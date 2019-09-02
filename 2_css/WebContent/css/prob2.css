@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+body{
+	margin: 0;
+}
+header{
+background-color: orange;
+text-align: center;
+height: 50%;
+border-top : 30px solid orange;
+border-bottom: 30px solid teal;
+
+}
+
+header hgroup{
+	background-color: orange;
+	text-shadow: 10px 10px 10px white;
+	margin:0;
+}
+h1{
+	margin : 0;
+}
+nav ul li a{
+	color : yellow;
+	font-weight: bold;
+}
+#top_nav ul{
+	display: flex;
+	flex-direction:row-reverse; 
+}
+
+#top_nav ul li{
+	display: inline;
+}
+#top_nav ul li a{
+	text-decoration: none;
+}
+
+
+#main_nav ul{ 
+	margin: 10px; 
+}
+#main_nav ul li{
+	background-color: black;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px; 
+}
+#main_nav ul li a{
+	text-decoration: none;
+}
+#top_nav{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background-color: black;
+}
+ul li{
+	display: inline;
+	text-transform: uppercase;
+	padding: 10px;
+}
+
+#left_a,#center_a,#right_a{
+	float: left;
+	height : 700px;
+	background-color:gray;
+	margin: 0px;
+}
+#left_a{
+	width: 10%;	
+}
+#left_a ul{
+	width: 10%;
+	margin: 0px;
+	padding: 5px;
+}
+a.btn1{
+	display : block;
+	text-align:center;
+	width: 100px;
+	border: 1px solid white;
+	border-radius: 15px;
+	line-height: 40px;
+	text-decoration: none;
+	color: green;
+	background-color: orange;
+	font-weight: bold;
+	font-size: 1.2em;
+	}
+#center_a {
+	text-align:center;
+	position : relative;
+	background-color:white;
+	width : 80%;
+}
+#main h1{
+	margin: 0 auto;
+}
+#main .tablea{
+	position: relative;
+	width: 500px;
+	margin : 0 auto;
+
+}
+
+.tablea {
+	position : relative;
+	width : 100px;
+	border : 3px solid black;
+	margin : 0px;
+	border-spacing: 0px;
+	
+}
+.tablea thead th{
+	background-color: black;
+	border : 0px;
+	color : orange;
+	margin: 0px;
+}
+.tablea tbody tr:nth-child(even){
+	background-color: gray;
+}
+.tablea tbody td:nth-child(even){
+	text-align: right;
+}
+.tablea tbody td:nth-child(3){
+	text-align: left;
+}
+
+#right_a{
+	width:10%;
+}
+#right_a img{
+	display: block;
+	margin : 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#footer{
+	height : 100px;
+	clear:both;
+	background-color: black;
+}

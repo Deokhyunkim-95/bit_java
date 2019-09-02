@@ -22,12 +22,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import DAO.BoardDao;
-import DAO.UserDao;
-import VO.BoardVO;
-import VO.UserVO;
+import dao.BoardDao;
+import dao.UserDao;
 import service.BoardServiceimpl;
 import service.UserServiceImpl;
+import vo.BoardVO;
+import vo.UserVO;
 
 public class BoardApp {
 

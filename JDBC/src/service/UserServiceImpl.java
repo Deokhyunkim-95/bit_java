@@ -1,7 +1,7 @@
 package service;
 
-import DAO.UserDao;
-import VO.UserVO;
+import dao.UserDao;
+import vo.UserVO;
 
 public class UserServiceImpl implements UserService{
 	

@@ -1,6 +1,6 @@
 package service;
 
-import VO.UserVO;
+import vo.UserVO;
 
 public interface UserService {
 	int insertUser(UserVO user);

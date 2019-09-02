@@ -2,8 +2,8 @@ package ex;
 
 import java.util.Iterator;
 
-import DAO.BookDao;
-import VO.BookVO;
+import dao.BookDao;
+import vo.BookVO;
 
 public class Ex_BookDao {
 	public static void main(String[] args) {
