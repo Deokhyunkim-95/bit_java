@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+ul{
+list-style: none;
+text-align: center;
+border-top: 1px solid red;
+border-bottom: 1px  dotted blue;
+padding: 10px 0;
+letter-spacing: 10px; /* 글자자간 */ 
+}
+
+ul li{
+	display: inline;
+	text-transform: uppercase;
+	padding: 10px;
+}
+
+ul li a{
+	text-decoration: none;
+	color: black;
+}
+ul li a:hover {
+	text-decoration:underline;
+}
+
+a.btn  {
+	display : block;
+	text-align:center;
+	width: 100px;
+	height: 40px;
+	border: 1px solid gray;
+	border-radius: 15px;
+	line-height: 40px;
+	text-decoration: none;
+	color: black;
+	background-color: gray;
+	font-weight: bole;
+	font-size: 1.2em;
+	margin: = 0 auto;
+}
+
+a.btn:hover {
+	color: red;
+	text-shadow: 10px 10px 10px white;
+}

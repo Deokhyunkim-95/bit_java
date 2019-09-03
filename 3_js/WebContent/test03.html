@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width = device-width, initial-scale=1"> 
+<style type="text/css">
+	#result{
+		margin:30px 0;
+		width : 400px;
+		height: 200px;
+		background-color: gray;
+	}
+</style>
+<script>
+function hello(){
+	return 'hello';
+}
+function world() {
+	return 'world';
+}
+function msg() {
+	let a =hello();
+	let b = world();
+	
+	document.getElementById('result').innerText=a; 
+	document.getElementById('msg').value=a+" "+b;
+	
+	console.log(a+b);
+}
+
+</script>
+
+<title>javascript</title>
+</head>
+<body>
+<h3>javascript function test</h3>
+
+<button id="btn1" onclick="msg()">button1</button>
+<input type = "text" id="msg" disabled="disabled">
+<div id="result"></div>
+
+</body>
+</html>
