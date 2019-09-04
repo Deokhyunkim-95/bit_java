@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="widtd = device-widtd, initial-scale=1"> 
+
+<title>계산기</title>
+<style type="text/css">
+ table, tr , td{
+ 	border : 2px solid gray;
+ 	border-collapse: collapse;
+ 	margin : 0 auto;
+ }
+ 
+ input.btn{
+ 	width: 98%;
+ 	height : 40px;
+ 	font-size: 15pt;
+ 	font-weight:bold;
+ 	
+ }
+ 
+ .clr, .equals{
+ 	width: 98%;
+ 	height: 40px;
+ 	font-size: 15px;
+ }
+
+ #display{
+ 	widtd: 260px;
+ 	height: 40px;
+ 	margin: 2px;
+ 	border: 2px solid green;
+ 	font-size: 16pt;
+ 	text-align: right; 	
+ }
+ </style>
+ 
+</head>
+<body>
+
+
+<h3 align="center">계산기</h3>
+
+<table>
+<tbody>
+	  <tr>
+    <td colspan="5"><input type="text" id="display" value="0"></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="7" class="btn" id="7" onclick="add('7')"></td>
+    <td><input type="button" value="8" class="btn" id="8" onclick="add('8')"></td>
+    <td><input type="button" value="9" class="btn" id="9" onclick="add('9')"></td>
+    <td colspan="2"><input type="button" value="c" class="clr" id="clr" onclick="c()"></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="4" class="btn" id="4" onclick="add('4')"></td>
+    <td><input type="button" value="5" class="btn" id="5" onclick="add('5')"></td>
+    <td><input type="button" value="6" class="btn" id="6" onclick="add('6')"></td>
+    <td><input type="button" value="/" class="btn" id="/" onclick="add('/')"></td>
+    <td><input type="button" value="%" class="btn" id="%" onclick="add('%')"></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="1" class="btn" id="1" onclick="add('1')"></td>
+    <td><input type="button" value="2" class="btn" id="2" onclick="add('2')"></td>
+    <td><input type="button" value="3" class="btn" id="3" onclick="add('3')"></td>
+    <td><input type="button" value="*" class="btn" id="*" onclick="add('*')"></td>
+    <td><input type="button" value="+" class="btn" id="+" onclick="add('+')"></td>
+  </tr>
+  <tr>
+    <td><input type="button" value="0" class="btn" id="0" onclick="add('0')"></td>
+    <td><input type="button" value="." class="btn" id="." onclick="add('.')"></td>
+    <td colspan="2"><input type="button" value="=" class = "equals" id="equals" onclick="e()"></td>
+    <td><input type="button" value="-" class="btn" id="-" onclick="add('-')"></td>
+  </tr>
+</tbody>
+</table>
+<script>
+ const log = console.log;
+ 
+ let disp = document.getElementById('display');
+ let expression="";
+ 
+ let btn = document.getElementsByClassName('btn');
+ 
+ for(let i=0;i<btn.length;i++){
+	 btn[i].setAttribute('onclick',"add('"+btn[i].value+"')");
+ }
+ 
+ 
+ function add(data) {
+	//alert(data);
+	expression += data;
+	disp.value = expression;
+	log(data);
+}
+ function c() {
+	expression = "";
+	disp.value = 0;
+}
+ function e() {
+	 disp.value = eval(expression);
+	 expression = "";
+}
+ 
+ </script>
+</body>
+</html>
