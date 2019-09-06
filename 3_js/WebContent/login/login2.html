@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width = device-width, initial-scale=1"> 
+
+<title>login</title>
+</head>
+<body>
+<h3>login form</h3>
+
+<form id = "f1" action = "login.jsp" method="get" >
+	<table border="1">
+		<tr>
+			<td> <label for="id"> ID </label></td>
+			<td> <input type ="text" id="id" name="id" value=""> </td>
+		</tr>
+		<tr> 
+			<td> <label for="pw"> PW </label></td>
+			<td> <input type ="password" id="pw" name="pw" value=""></td>
+		</tr>
+		<tr>
+			<td colspan="2"> 
+				<input type = "submit" value="로그인" > 
+				<input type = "reset" value="취소" > 			
+			<a href="user.html">회원가입</a>
+			</td>
+		</tr>
+</table>
+</form>
+<script>
+window.onload= function(){
+	let f1 = document.querySelector('#f1');
+	f1.onsubmit = check;
+}
+	function check(){
+		let id = document.querySelector("#id");
+		let pw = document.querySelector("#pw");
+		if(id.value.trim().length < 5 ){
+			alert("ID 5글자이상 입력하세요");
+			id.focus();
+			return false;		
+		}
+		return true;
+	
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width = device-width, initial-scale=1"> 
+
+<title>javascript date p347</title>
+<script type="text/javascript">
+const log = console.log;
+let days;
+function check(){
+	let p = document.getElementById("pdate").value;
+	let now = new Date();
+	let pdate = new Date(p);
+	
+	if(pdate > now){
+		alert("날짜를 다시 선택하세요...");
+		return false;
+	}
+	
+	days = Math.floor((now-pdate)/(1000*60*60*24))+"일";
+	log(days);
+	
+	if(days>30){
+		alert("교환 가능기간이 지났습니다.");
+	}
+	else{
+		alert("교환 가능합니다.");
+	}
+}
+
+</script>
+</head>
+<body>
+<h3>javascript date p347</h3>
+<div>
+	구입날자 : <input type="date" id="pdate" required="required"><br><br>
+	환불가능 : Check: <button onclick="check()">check</button>
+</div>
+</body>
+</html>

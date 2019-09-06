@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width = device-width, initial-scale=1"> 
+
+<title>dom</title>
+
+<script>
+	const log = console.log;
+	let h1;
+	window.onload= function(){
+//	함수는 웹브라우저의 모든구성요소에 대한 로드가 끝났을떄 브라우저에 의해서 호출되는 함수.
+//document.getElementById("id1").style.backgroundColor="red";
+//	document.querySelector('#id1').style.backgroundColor="red";
+//	document.querySelector('.h3').style.backgroundColor="red";
+	//맨처음에 찾은 하나만 실행
+//	document.querySelectorAll('h3') 배열로 찾기 떄문에 반복문이 돌아야한다.
+//	document.querySelectorAll('h3')[0].style.backgroundColor="red";	
+//	document.querySelectorAll('h3')[1].style.backgroundColor="red";	
+	
+//	document.querySelector('h1').style.color="blue";
+	
+	h1 = document.querySelectorAll('h1');
+	
+//	for(let i=0;i<h1.length;i++){
+//		h1[i].style.color="blue";
+//		h1[i].style.backgroundColor="gray"
+//		h1[i].innerHTML="``````"
+//		}
+
+	for(let data of h1){
+		data.style.color="gray";
+		data.style.backgroundColor="red";
+		data.innerHTML="~~~~~~~"		
+	}
+	}
+</script>
+
+</head>
+
+<body>
+<h1 id="id1"> javascript dom</h1>
+
+<h1> Process-h1</h1>
+<h2> Process-h2</h2>
+<h3 class="h3"> Process3</h3>
+<h3>Process-h3...</h3>
+<h4 class="h3">Process-h4...</h4>
+
+</body>
+</html>

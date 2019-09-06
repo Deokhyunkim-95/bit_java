@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width = device-width, initial-scale=1"> 
+
+<title>javascript array</title>
+<style type="text/css">
+#result{
+width : 500px;
+height : 300px;
+	border: 1px solid black;
+}
+h3{
+	color:red;
+}
+</style>
+<script type="text/javascript">
+
+window.onload=function(){
+	let disp = document.getElementById("result");
+	disp.innerHTML=num;
+	num.filter(i=> i>33).forEach(data=> document.getElementById("result").innerHTML());
+		//for(let i ; i<num.length ;i++){
+			//if(num[i]>33){
+			//document.getElementById("result").innerHTML(num);	
+			//}
+		//}
+	
+	};
+
+const log = console.log;
+
+let x = [3,6,9,77,88];
+let y = [22,33,44,55];
+
+let num = x.concat(y);
+log(num);
+
+num.sort()
+log(num);
+num.sort((a,b)=>{ return a-b}); //오름차순
+//num.sort((a,b)=>{ return b-a}); //내림차순
+log(num);
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+<h3>javascript array</h3>
+
+<div id = "result"></div>
+
+</body>
+</html>

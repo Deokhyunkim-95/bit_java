@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width = device-width, initial-scale=1"> 
+
+<title>javascript array</title>
+<style type="text/css">
+#result{
+	width : 500px;
+	height : 300px;
+	border: 1px solid black;
+}
+</style>
+<script>
+const log = console.log;
+let data1 = {name:"홍길동",age:27};
+let data2 = {"name":"홍길동","age":"27"};
+
+let s1 = JSON.stringify(data1);
+let s2 = JSON.stringify(data2);
+
+log(typeof(s1)," ",s1);
+
+let obj1 =JSON.parse(s1);
+let obj2 =JSON.parse(s2);
+
+let data3 = [
+	{"name":"홍길동","age":"27"},
+	{"name":"홍길동","age":"27"},
+	{"name":"홍길동","age":"27"},
+	{"name":"홍길동","age":"27"},
+];
+
+let s3 = JSON.stringify(data3);
+//alert(s3);
+let obj3 = JSON.parse(s3);
+
+let sample = '{"name":"홍길동","age":"27"}';
+let sampleobj =JSON.parse(sample);
+
+let student = {
+		name:"홍길동",
+		ko:99,
+		eng:100,
+		flat:true,
+		u:null
+}
+
+let studentStr = JSON.stringify(student);
+
+
+//obj3을 table 구조로 만들어서 #result에 출력
+function getData(){
+		
+	/*	let disp = document.getElementById("result");
+		disp.innerHTML=obj3;
+		
+		let test = JSON.stringify(obj3);
+		alert(typeof(test));
+		
+		
+		obj3.forEach(i => document.getElementById("result"));*/
+		
+		let disp = document.getElementById("result");
+		let tag = "<table class='tablea'>";
+		tag += "<tr> <th>이름</th> <th>나이</th> </tr>";
+		
+		for(let data of obj3){
+		tag += "<tr><td> "
+		tag += data.name+"</td><td>"+data.age
+		tag += "</tr></td> "
+		}
+				
+		
+		tag+="</table>";
+		
+		
+		disp.innerHTML = tag;
+		
+	}
+
+</script>
+</head>
+<body>
+<h3>json</h3>
+
+<button onclick="getData()">Data 가져오기</button>
+<div id ="result"></div>
+</body>
+</html>

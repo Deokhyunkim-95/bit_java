@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width = device-width, initial-scale=1"> 
+
+<title>login</title>
+</head>
+<body>
+<h3>login form</h3>
+
+<form action = "login.jsp" method="get">
+	<table border="1">
+		<tr>
+			<td> <label for="id"> ID </label></td>
+			<td> <input type ="text" id="id" name="id" value="" required="required"> </td>
+		</tr>
+		<tr> 
+			<td> <label for="pw"> PW </label></td>
+			<td> <input type ="text" id="pw" name="pw" value="" required="required" 
+			pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9]).{4,20}"/></td>
+		</tr>
+		<tr>
+			<td colspan="2"> 
+				<input type = "submit" value="로그인" > 
+				<input type = "reset" value="취소" > 			
+			<a href="user.html">회원가입</a>
+			</td>
+		</tr>
+</table>
+</form>
+
+
+
+
+</body>
+</html>

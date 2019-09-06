@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width = device-width, initial-scale=1"> 
+
+<title>과제</title>
+<style type="text/css">
+html{
+	widows: 100%
+}
+#left, #result, #right{
+	margin : 0 auto;
+	float: left;
+	height: 200px;
+}
+#left{
+	text-align:right;
+	width:30%;
+}
+#result{
+	width: 40%;
+}
+#right{
+	text-align: left;
+	width: 30%;
+}
+
+#left, #right{
+	position : static;
+	margin-top : 10%;
+}
+#h3{
+	text-align: center;
+}
+#result{
+	border : 3px solid black;
+	width: 500px;
+}
+</style>
+<script type="text/javascript">
+
+let cur=0;
+
+let abc = [
+	"./img/KakaoTalk_20190828_134938628.jpg",
+	"./img/KakaoTalk_20190828_140809093.jpg",
+	"./img/KakaoTalk_20190828_140815977.jpg"
+];
+
+function now(i){
+	
+	document.querySelector("#result").src=abc[i];
+	
+}
+
+window.onload = function(){
+	let img = document.querySelector("#result");
+	img.src = abc[cur];
+	img.width =500;
+	img.height=200;
+
+	let left = document.querySelector("#left");
+	let right = document.querySelector("#right");
+	
+	left.onclick = function(){
+		
+		if(cur==0){
+			cur = abc.length-1;
+		}
+		else{
+			cur = cur-1;
+		}
+		
+		now(cur);
+	}
+	
+	right.onclick = function(){
+		
+		if(cur==abc.length-1){
+			cur = 0;
+		}
+		else{
+			cur = cur +1 ;
+		}
+		now(cur);
+	}
+};
+
+</script>
+</head>
+<body>
+<h3 id = "h3">갤러리</h3>
+<div id = "left"> 이전그림 </div>
+<img id = "result"></img>
+<div id = "right"> 다음그림 </div>
+</body>
+</html>
