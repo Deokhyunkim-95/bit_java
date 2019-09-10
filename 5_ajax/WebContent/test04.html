@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width = device-width, initial-scale=1"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<style type="text/css">
+
+#demo {
+	width: 700px;
+	height: 400px;
+	overflow: scroll;
+}
+
+</style>
+
+<script type="text/javascript">
+$(function(){
+	$('#btn1').click(function(){
+		getXml();
+		
+	})
+	
+});
+
+function getXml(){
+	//jsonp사용할수 있으나 데이터를 가져오는쪽에서 허용해줘야만 쓰거나.
+	//따로 proxy서버를 만들어 줘야 사용이 가능하다.
+	$.ajax({
+		//url: 'http://www.weather.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=109',
+		url: 'rss.jsp',
+		success:function(data){
+			//alert(data);
+			dispxml(data);
+		},
+		error:function(error){
+			alert("error" + error);
+		}
+	
+	});
+}
+const log = console.log
+function dispxml(data){
+	let tag = '<h3> 서울 경기 일기예보</h3>';
+	let loc =  $(data).find('location');
+
+	$(loc).each((i,item)=>{
+		 let city = $(item).find('city').text();
+		 let wf = $(item).find('wf').text();
+		 
+		 tag+='<h4>' +city+'||'+wf+'</h4>'
+	});
+		
+		
+	$('#demo').html(tag);
+}
+
+
+</script>
+<title>jquery ajax load</title>
+
+</head>
+<body>
+<h3>jquery ajax 일기예보</h3>
+<button id = "btn1" > getData(xml) </button>
+<div id= "demo"></div>
+
+</body>
+</html>
