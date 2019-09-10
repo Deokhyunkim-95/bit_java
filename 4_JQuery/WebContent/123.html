@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width = device-width, initial-scale=1"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<script>
+//window.onload = function(){
+//	$("h2").click(function (){
+//		$("h2").hide();
+//	});
+	
+//$(document).ready(function () { alert('jquery');});
+//$ = jQuery
+//$(()=> {});
+$(function (){ 
+	//callback 함수
+	// : 함수안에서 함수호출
+	//- > javascript특징
+	$('#h2_2').click( function(){
+		$(this).hide();	
+	});
+});
+	
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+<h1>jquery teset</h1>
+
+<h2>클릭하면 사라집니다.1</h2>
+<h2 id ="h2_2">클릭하면 사라집니다.2</h2>
+<h2>클릭하면 사라집니다.3</h2>
+<h2>클릭하면 사라집니다.4</h2>
+<h2>클릭하면 사라집니다.5</h2>
+</body>
+</html>
