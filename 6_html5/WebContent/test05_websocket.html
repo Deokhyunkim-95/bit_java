@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width = device-width, initial-scale=1"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<title>Insert title here</title>
+<script>
+let ws;
+let url="ws://echo.websocket.org";
+
+	function init() {
+		ws = new WebSocket(url);
+		
+		ws.onopen = function(){
+			alert("웹소켓 오픈");
+		};
+		ws.onmessage = function(e){
+			var msg = e.data+" 서버로부터 받은 매세지";
+			$('#result').html(msg);
+		};
+		ws.onclose = function(){
+			alert("webSocket close");
+		};
+	}
+	function quit() {
+		ws.close();
+	}
+	function send() {
+		ws.send($('#msg').val());
+	}
+</script>
+</head>
+<body>
+<button onclick="init()">웹소켓 연결</button>
+<button onclick="quit()">웹소켓연결종료</button><br><br>
+<input type="text" id="msg"><button onclick="send()">데이터송신</button>
+<p>서버로부터 받은 메세지 출력창</p>
+<div id = "result"></div>
+</body>
+</html>

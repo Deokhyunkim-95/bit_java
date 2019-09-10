@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width = device-width, initial-scale=1"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<title>web storage</title>
+</head>
+<body>
+<h3>web storage</h3>
+<p> 페이지 방문 횟수: <span id ="count"> 번</span></p>
+
+<script type="text/javascript">
+if(!localStorage.count)localStorage.count=0;
+localStorage.count = parseInt(localStorage.count)+1;
+$('#count').html(localStorage.count);
+
+</script>
+</body>
+</html>
