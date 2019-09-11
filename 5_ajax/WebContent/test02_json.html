@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width = device-width, initial-scale=1"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<link rel="stylesheet" href="./css/tabl.css"> 
+
+<title>jquery ajax load</title>
+<script type="text/javascript">
+	$(function () {
+		$("#btn1").click(function(){
+			
+			//$.ajax({ 자바스크립트 객체이며 ajax 통신을 위한 환경설정 코드 기술 });
+			$.ajax({
+				url:'json.jsp', //json.jsp로 요청
+				data:'json', //json이 넘어온다
+				success:function(data){
+					display(data);
+				}, //성공시
+				error:function(error){
+					alert("error :"+error.name);
+				} //실패시
+					
+			});
+		});
+});
+const log = console.log
+function display(data) {
+	//console.log(typeof(data));
+	//$(data).each((i,item)=>{log(item.id)});
+	
+	let tag = "<table class='tablea'>";
+	tag += "<tr> <th>아이디</th> <th>이름</th> <th>이메일</th> </tr>";
+	
+	$(data).each((i,item)=>{
+		tag += "<tr><td> "
+		tag += item.id+"</td><td>"+item.name+"</td><td>"+item.email
+		tag += "</tr></td> "
+	});
+	tag +="</table>";
+	
+	$("#demo").html(tag);
+	
+}
+	
+</script>
+<style type="text/css">
+
+#demo {
+	width: 700px;
+	height: 400px;
+	overflow: scroll;
+}
+
+
+</style>
+</head>
+<body>
+<h3>jquery ajax getData(json)</h3>
+<button id = "btn1" > ajax getData(json) </button>
+<div id= "demo"></div>
+
+client => 서버로 요청
+.주소창을 통해 url창
+.link
+.submit
+.ajax = XMLhttprequest를 background에서 작업
+
+</body>
+</html>

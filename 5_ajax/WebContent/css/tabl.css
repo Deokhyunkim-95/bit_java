@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+	table{
+		width: 50%;
+		height: 50%;
+		text-align: center;
+		border-collapse:  collapse;
+	}
+	
+	table,tr,td,th {
+		border: 1px solid blue; 
+	}
+	th,td{
+		color:  aqua;
+		font-family: serif;
+		font-weight: bold;
+	}
+	
+	
+	.tablea tr:nth-child(even) {
+		background-color: gray;
+	}
+	.tablea tr:hover{
+	background-color: orange;
+	font-size: 105%;
+	}
+	table {
+		margin: 0 auto;
+	}
+	.tableb tr:nth-child(2n){
+	background-color: silver;
+	font-size: 105%;
+	}
