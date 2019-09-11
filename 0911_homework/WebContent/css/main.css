@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+header {
+	height: 400px;
+	background-image: url("../img/13.jpg");
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size:cover;
+}
+hgroup h1{
+	text-align: center;
+	color: aqua;
+	margin: 0px;
+
+}
+#topright_nav{
+	position: absolute;
+	right: 10px;
+	top: 0px;
+}
+#topright_nav ul li{
+	display: inline;
+	
+}
+#topright_nav ul li a{
+	text-decoration: none;
+	font-size: medium;
+}
+#login, #register{
+	background-color: transparent;
+	border: none;
+}
+
+#topleft_nav{
+	position: absolute;
+	left: 10px;
+	top:0px;
+	margin-top: 16px;
+}
+#topleft_nav a{
+	color: white;
+	text-decoration: none;
+	font-size: 18px;
+	display: inline;
+}
+
+#footer{
+	color :white;
+	height : 18%;
+	clear:both;
+	background-color: black;
+}

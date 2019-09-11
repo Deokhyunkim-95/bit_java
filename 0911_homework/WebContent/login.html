@@ -3,13 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name = "viewport" content="width = device-width, initial-scale=1"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="./js/popup.js"></script>
+<link rel="stylesheet" href="./css/table.css"> 
+<style type="text/css">
 
-<title>Insert title here</title>
+</style>
+<title>로그인창</title>
 </head>
 <body>
-		<h3>Users log in 정보</h3>
-<form action="adduser.jsp" method="get">
-<table border = "1">
+<h3>로 그 인</h3>
+<form action="" method="get">
+<table id = "table" border = "1">
 		<tr>
 			<td> <label for ="id"> ID </label> </td>
 			<td> <input type ="text" id = "id" name="name" value ="" /> </td>
@@ -19,9 +24,9 @@
 			<td> <input type ="password" id = "pw" name="name" value ="" /> </td>
 		</tr>		
 		<tr>
-			<td colspan = "2">
+			<td id ="button" colspan = "2">
 				<input type = "submit" value = "로그인">			
-				<input type = "reset" value = "취소">		
+				<input type = "reset" id="reset" value = "취소">		
 			</td>
 			
 		</tr>	
