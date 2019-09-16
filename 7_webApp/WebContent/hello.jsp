@@ -8,16 +8,22 @@
 </head>
 <body>
 
+<h3> hello.jsp </h3>
+
 <%
-request.setCharacterEncoding("utf-8");
+request.setCharacterEncoding("utf-8"); 
 
 String name = request.getParameter("name");
 String id = request.getParameter("id");
 %>
 
 <table border="1">
-	<tr> <td><%=name %></td> <td><%=id %></td> </tr>
+  <tr> <td> <%= name %></td> <td><%= id %>  </td></tr>
 </table>
+
 
 </body>
 </html>
+
+
+

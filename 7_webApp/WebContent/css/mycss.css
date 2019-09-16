@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+* {
+	margin:5px;
+	color: navy;
+	font-family: sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
