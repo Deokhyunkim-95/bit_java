@@ -1,2 +1,0 @@
-<footer>	Footer content  </footer>
-    
