@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>jQuery ajax load</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+const log = console.log;
+
+jQuery(function () {
+	//#btn1이 click되면 호출되는 callback 함수
+	$("#btn1").click( function () {
+		//.load()로 파일 로드하기
+		$("#demo").load("data.txt");
+	
+	});
+	
+});
+
+</script>
+
+<style type="text/css">
+
+#demo{
+	width: 700px;
+	height: 400px;
+	overflow: scroll;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<h3>jQuery ajax load</h3>
+<button id="btn1"> Load</button>
+<div id="demo"></div>
+
+
+</body>
+</html>

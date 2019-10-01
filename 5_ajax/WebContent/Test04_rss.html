@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>jQuery Ajax 일기예보 -rss</title>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+const log = console.log;
+
+jQuery(function () { 
+
+	$("#btn1").click ( function () {
+		getXml();
+	});
+});
+
+
+function getXml() {
+	
+	$.ajax({
+		//url:'http://www.kma.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108',
+		// -> 보안 때문에 proxy server 이용
+		// -> "Access to XMLHttpRequest at 'http://www.kma.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108' 
+		//	  from origin 'http://localhost:8000' has been blocked by CORS policy: 
+		//	  No 'Access-Control-Allow-Origin' header is present on the requested resource."
+			url:'rss.jsp',
+			//-> proxy server
+			success:function(data){
+			//alert("success "+success)
+			displXml(data);
+		},
+			error:function(error){
+			//alert("error " +error)			
+		}
+	});
+}
+
+function displXml(data) {
+	let tag = "<h3> 서울 경기 일기 예보 </h3>";
+	let loc = $(data).find("location");
+	$(loc).each((i,item) => {
+		let city = $(item).find("city").text();
+		let wf = $(item).find("wf").text();
+		tag+= "<h4>" +city+ " : " +wf + "</h4>"; 
+	
+	});
+
+	$("#demo").html(tag);
+}
+
+</script>
+
+<style type="text/css">
+#demo {
+	width: 700px;
+	height: 400px;
+	overflow: scroll;
+}
+</style>
+
+</head>
+<body>
+	<h3>jQuery Ajax 일기예보</h3>
+	<button id="btn1">getData(xml)</button>
+	<div id="demo"></div>
+
+
+</body>
+</html>

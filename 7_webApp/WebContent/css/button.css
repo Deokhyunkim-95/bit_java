@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* Button CSS Start */
+a.btn1{
+   font-family:Pacifico;
+   font-weight:bold;
+   font-size:120%;
+   text-align:center;
+   line-height:40px;  /*세로 정렬하려고 height에 맞춤  */
+   text-decoration: none;
+   display: block;
+   width: 100px;    /* inline은 크기지정이 안됨   =>  block으로 바꾼다.*/
+   height: 40px;
+   background: orange;
+   color: green;
+   border: 1px solid white;
+   border-radius: 15px;
+   box-shadow: 5px 5px 5px gray;
+   /*padding: 0 100px;*/
+   /*margin: 50px 100px;*/
+   margin: 0 auto;/* 가운데 정렬됨   margin은 auto 이용 가운데 위치 시킬수 있음 */
+   
+}
+a.btn1:hover {
+	  color: red;
+      text-transform: capitalize;
+      text-shadow: 3px 5px 10px white; /* x y 번짐정도    p145  */
+}

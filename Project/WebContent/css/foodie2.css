@@ -1,0 +1,113 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Nanum+Gothic&display=swap');
+
+
+body {
+	background-size: 100px;
+	background-attachment: local;
+	background-position: right top;
+	background-repeat: no-repeat;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	
+}
+
+
+#myNavbar ul{
+	background-position: top;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+	height: 80px;
+	width: 100%;
+}
+
+#myNavbar ul li{
+	float: left;
+	list-style-type: none;
+}
+
+#myNavbar li a, #dropmenu{
+	display: inline-block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 25pt;
+}
+
+#myNavbar li a:hover, .dropdown:hover #dropmenu{
+	background-color: #4CAF50;
+}
+
+li.dropdown{
+	display: block;
+}
+
+.dropdown-content{
+	
+  display: none;
+  position: absolute;
+  background-color: gray;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.drop_btn{
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;	
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+#myNavbar a {
+	font-weight: bold;
+}
+
+
+
+a{
+	text-decoration: none;
+}
+
+
+
+.bold {
+	font-weight: bold;
+	color: cornflowerblue;
+}
+
+
+
+
+
+
+
+footer {
+	background-position: bottom;
+	clear: both;
+	width: 100%;
+	line-height: 2em;
+	background-color: black;
+	color: white;
+	text-align: center;
+	color: white;
+	padding: 2px;
+
+}
+.nav, footer{
+	font-family: 'Nanum Gothic', sans-serif;
+}

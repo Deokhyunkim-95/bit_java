@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Baloo|Julius+Sans+One|Poiret+One|Reenie+Beanie|Alegreya+Sans+SC|Baloo+Bhaina|Darker+Grotesque|Thasadith&display=swap');
+
+
+
+
+h3{
+text-align: center;
+font-family: Poiret One;
+}
+
+#login{
+text-align: center;
+border-collapse: collapse;
+border : 1px solid transparent;
+border-radius: 30px 70px;
+	background-color: #FFE459;
+margin: 0 auto;
+width: 300px;
+/* height: 220px; */
+font-family: Darker Grotesque;
+font-size: 14pt;
+}
+#id{
+	border: 1px solid #FFE459;
+}
+#pw{
+	border: 1px solid #FFE459;
+}
+.log{
+width: 100px;
+}
+
+#tttr{
+height: 70px;
+}
+
+.btn1{
+width: 70px;
+height: 30px;
+border-radius: 7px;
+border : 1px solid transparent;
+background-color: white;
+font-family: Darker Grotesque;
+font-size: 12pt;
+    font-weight: bold;
+}
+
+#btn2{
+
+    color: black;
+ 
+    }

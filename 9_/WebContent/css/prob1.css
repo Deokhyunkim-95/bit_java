@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+
+
+@media screen and (max-width:1000px){
+      body {
+	    background-color: #e7ecdf;
+      }
+  }
+  
+  @media screen and (max-width:600px){
+      body {
+	    background-color: #ffffcc;
+      }
+  }
+  
+  h1,h2,h3,h4,h5,h6 {
+     font-family: 'Permanent Marker', cursive;
+  }
+  
+  nav {
+     width: 100%;
+     height: 3em;
+     background-color: black;
+     line-height: 3em;
+  }
+  nav ul li {
+     display: inline;
+     padding: 10px;
+  }
+  nav ul {
+      list-style: none;
+      text-align: center;
+  }
+  ul{
+        list-style: none;
+  }
+ a{
+         text-decoration: none;
+ }
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+  }
+  a:hover {
+	 text-decoration: underline;
+  }
+  
+  section {
+     width: 95%;
+     min-height:600px;
+/*      background-color: yellow; */
+     float: left;
+     
+     
+  }
+  
+  
+  
+  footer {
+     clear: both;
+     width: 100%;
+     height: 3em;
+     line-height: 3em;
+     background-color: black;
+     color: white;
+     text-align: center;
+  }
+  a.btn {
+    display: block;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+    border: 1px solid orange;
+    border-radius: 15px;
+    line-height: 40px;
+    text-decoration: none;
+    color: black;
+    background-color: gray;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 0 auto;
+    
+}
+a.btn:hover {
+	color: red;
+	text-shadow: 5px 5px 5px white; 
+}
+  
+img {
+  width: 300px;
+  height: 300px;	
+}
+
+header hgroup h1 ,.center{
+      text-align: center;
+  }
+  header hgroup h2 {
+     position:absolute;
+     right: 0px;
+     top: -30px;
+  }
+  header {
+    width : 100%;
+    height: 4em;
+/*     border: 2px solid blue; */
+    position: relative;
+  }
+ .dropbox{
+   position: relative;
+ }
+.dropmenu{
+  visibility: hidden;
+  position:absolute;
+  top: 30px;
+  left: 0px;
+}
+
+.dropbox:hover > .dropmenu{
+   visibility: visible;
+}
+
+
+#etc{
+  text-decoration: none;
+}
+ 

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>Bubble Chart</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+<script>
+const log = console.log;
+
+let xdata;
+
+
+jQuery(function () { 
+
+	$("#btn").click(function () {
+		$.ajax({
+			url: "bubble_data.jsp",
+			dataType: "json",
+			success: function (data) {
+				xdata = data;
+				chart(xdata);
+			},
+			error: function (error) {
+				alert("error다...." + error)
+			}
+		});
+	});
+});
+
+function chart(data) {
+	
+	Highcharts.chart('container', {
+	    chart: {
+	        type: 'packedbubble',
+	        height: '100%'
+	    },
+	    title: {
+	        text: 'Carbon emissions around the world (2014)'
+	    },
+	    tooltip: {
+	        useHTML: true,
+	        pointFormat: '<b>{point.name}:</b> {point.value}m CO<sub>2</sub>'
+	    },
+	    plotOptions: {
+	        packedbubble: {
+	            minSize: '20%',
+	            maxSize: '100%',
+	            zMin: 0,
+	            zMax: 1000,
+	            layoutAlgorithm: {
+	                gravitationalConstant: 0.05,
+	                splitSeries: true,
+	                seriesInteraction: false,
+	                dragBetweenSeries: true,
+	                parentNodeLimit: true
+	            },
+	            dataLabels: {
+	                enabled: true,
+	                format: '{point.name}',
+	                filter: {
+	                    property: 'y',
+	                    operator: '>',
+	                    value: 250
+	                },
+	                style: {
+	                    color: 'black',
+	                    textOutline: 'none',
+	                    fontWeight: 'normal'
+	                }
+	            }
+	        }
+	    },
+	    series: data
+	    
+	});
+	
+}
+
+
+</script>
+
+<style type="text/css">
+
+#container {
+	min-width: 320px;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+<h3>Bubble Chart</h3>
+<button id="btn">Show Bubble Chart</button>
+<div id="container"></div>
+
+
+</body>
+</html>

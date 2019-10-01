@@ -1,5 +1,9 @@
-AJAX is a developer's dream, because you can:
+Bootstrap Get Started
+What is Bootstrap?
+Bootstrap is a free front-end framework for faster and easier web development
+Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins
+Bootstrap also gives you the ability to easily create responsive designs
+What is Responsive Web Design?
 
-Read data from a web server - after the page has loaded
-Update a web page without reloading the page
-Send data to a web server - in the background
+Responsive web design is about creating web sites which automatically adjust themselves to look good on all devices, from small phones to large desktops.
+

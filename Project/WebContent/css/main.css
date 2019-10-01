@@ -1,0 +1,319 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Nanum+Gothic&display=swap');
+
+*	{
+	font-family: 'Do Hyeon', sans-serif;
+}
+
+
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+
+.backgroundTransition{
+    min-height:600px;
+    background-image: url("./img/fajita.jpg");
+    background-size: cover;
+    text-align: center;
+}
+
+.jamie{
+	min-height:600px;
+	background-color: rgba(0,0,0,0.2);
+	
+}
+
+#title{
+	width: 100%;
+	height: 100%;
+	padding-top: 80px;
+	color: white;
+}
+
+#main_title{
+	text-align: center;
+	font-size: 50pt;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+#main_description{
+	text-align: center;
+	font-size: 25pt;
+	margin: 0 auto;
+}
+
+*
+{
+    outline: none;
+}
+
+html, body
+{
+    height: 100%;
+    min-height: 100%;
+}
+
+body
+{
+    margin: 0;
+    background-color: #F2D283;
+}
+
+.tb
+{
+    display: table;
+    width: 100%;
+}
+
+.td
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+input, button
+{
+    color: #fff;
+    font-family: Nunito;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+
+#cover
+{
+    position: relative;
+    top: 150px;
+    left: 0;
+    right: 0;
+    width: 90%;
+    padding: 15px;
+    margin: -83px auto 0 auto;
+    background-color: #F28F32;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px #F28F32, 0 0 0 20px #ffffffeb;
+    transform: scale(0.6);
+    z-index: 2;
+}
+
+#search_box{
+	font-family: 'Do Hyeon', sans-serif;
+	padding-left: 40px;
+	
+}
+
+form
+{
+    height: 96px;
+}
+
+input[type="text"]
+{
+    width: 100%;
+    height: 96px;
+    font-size: 60px;
+    line-height: 1;
+}
+
+input[type="text"]::placeholder
+{
+    color: #DF6C1B;
+}
+
+#s-cover
+{
+	
+    width: 1px;
+    padding-left: 35px;
+}
+
+button
+{
+    position: relative;
+    display: block;
+    width: 84px;
+    height: 96px;
+    cursor: pointer;
+}
+
+#s-circle
+{
+    position: relative;
+    top: -8px;
+    left: 0;
+    width: 43px;
+    height: 43px;
+    margin-top: 0;
+    border-width: 15px;
+    border: 15px solid #fff;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: 0.5s ease all;
+}
+
+button span
+{
+    position: absolute;
+    top: 68px;
+    left: 43px;
+    display: block;
+    width: 45px;
+    height: 15px;
+    background-color: transparent;
+    border-radius: 10px;
+    transform: rotateZ(52deg);
+    transition: 0.5s ease all;
+}
+
+button span:before, button span:after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    transform: rotateZ(0);
+    transition: 0.5s ease all;
+}
+
+#s-cover:hover #s-circle
+{
+    top: -1px;
+    width: 67px;
+    height: 15px;
+    border-width: 0;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+#s-cover:hover span
+{
+    top: 50%;
+    left: 56px;
+    width: 25px;
+    margin-top: -9px;
+    transform: rotateZ(0);
+}
+
+#s-cover:hover button span:before
+{
+    bottom: 11px;
+    transform: rotateZ(52deg);
+}
+
+#s-cover:hover button span:after
+{
+    bottom: -11px;
+    transform: rotateZ(-52deg);
+}
+#s-cover:hover button span:before, #s-cover:hover button span:after
+{
+    right: -6px;
+    width: 40px;
+    background-color: #fff;
+}
+
+
+#main1{
+	margin-top: 50px;
+	padding-bottom: 30px;
+}
+
+.menu{
+		font-size: 40pt;
+		color: white;
+		padding-left: 90px;
+}
+
+
+#topright_nav ul li{
+	display: inline;
+	
+}
+#topright_nav ul li a{
+	text-decoration: none;
+	font-size: medium;
+}
+#login, #register{
+	background-color: transparent;
+	border: none;
+}
+
+#topleft_nav{
+	position: absolute;
+	left: 10px;
+	top:0px;
+	margin-top: 16px;
+}
+#topleft_nav a{
+	color: white;
+	text-decoration: none;
+	font-size: 18px;
+	display: inline;
+}
+
+#foodstyle_frame, #eatdeal_frame{
+	width: 94%;
+	height: 850px;
+	margin: 0 auto;
+	display: table;
+	padding: 0px;
+	
+}
+
+#foodstyle_row1, #eatdeal_row1{
+	margin: 0 auto;
+	padding: 0px;
+	display: table-row;
+}
+
+#foodstyle_row2, #eatdeal_row2{
+	margin: 0 auto;
+	padding: 0px;
+	display: table-row;
+}
+
+
+.foodstyle_data, .eatdeal_data{
+	margin: 0 auto;
+	border-radius: 2px;
+	display: table-cell;
+	float: left;
+	width: 33%;
+	height: 380px; 
+	padding-bottom: 10px;
+}
+
+.btn{
+	width: 100%;
+	height: 100%;
+	display: block;
+	font-size: 25pt;
+/* 	padding-top: 120px; */
+	margin: 0 auto;
+	text-align: center;
+	text-decoration: none;
+}
+
+.img{
+	width: 440px;
+	height: 340px;
+}
+
+span{
+	display: block;
+	text-align: center;
+	color: white;
+	margin-left: 10px;
+	margin-right: 10px;
+	
+}

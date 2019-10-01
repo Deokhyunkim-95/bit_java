@@ -1,0 +1,34 @@
+
+	$(function(){
+		$('#id_check').click(function(){
+			idcheck();
+			
+			
+		});
+		
+		
+	});
+	
+	function idcheck(){
+		$.ajax({
+			
+			url:'json/id_check.jsp',
+		dataType:'json',
+		data:{
+			id:$('#id').val()
+			
+		},
+		success:function(data){
+			//xdata=data;
+			//alert("success"+data.id);//null=undefined
+			if(data.id == undefined){
+				$('#msg1').html('사용가능한 아이디입니다.')
+			}else{
+				
+				$('#msg1').html('사용중인 아이디입니다.')
+			}
+		},
+		error:function(e){
+			alert("error"+ e);
+		}
+		});

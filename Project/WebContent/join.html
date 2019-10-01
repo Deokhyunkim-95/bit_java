@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>layout test App</title>
+<link rel="stylesheet" href="./css/join.css">
+<style type="text/css">
+
+
+h3{
+text-align: center;
+font-family: Poiret One;
+}
+
+#join{
+border-collapse: collapse;
+border : 1px solid transparent;
+border-radius: 30px 70px;
+background-color: #FDAD5E;
+margin: 0 auto;
+width: 400px;
+height: 300px;
+font-family: Darker Grotesque;
+font-size: 14pt;
+}
+.lbl{
+	width: 60px;
+	text-align: center;
+}
+.cont{
+	text-align: left;
+	padding-left: 30px;
+}
+#id{
+	border: 1px solid #FDAD5E;
+}
+#pw{
+	border: 1px solid #FDAD5E;
+}
+#name{
+	border: 1px solid #FDAD5E;
+}
+.okbtn{
+	text-align: center;
+}
+
+.btn1{
+width: 70px;
+height: 30px;
+border-radius: 7px;
+border : 1px solid transparent;
+background-color: white;
+font-family: Darker Grotesque;
+font-size: 12pt;
+font-weight: bold;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+	<script type="text/javascript">
+	const log = console.log;
+	let xdata;//필요하면 사용
+	
+	$(function(){
+		$('#id_check').click(function(){
+			idcheck();
+			
+			
+		});
+		
+		
+	});//돔트리 완성되면 이 함수 수행
+	
+	function idcheck(){
+		$.ajax({
+			
+			url:'json/id_check.jsp',
+		dataType:'json',
+		data:{
+			id:$('#id').val()
+			
+		},
+		success:function(data){
+			//xdata=data;
+			//alert("success"+data.id);//null=undefined
+			if(data.id == undefined){
+				$('#msg1').html('사용가능한 아이디입니다.')
+			}else{
+				
+				$('#msg1').html('사용중인 아이디입니다.')
+			}
+		},
+		error:function(e){
+			alert("error"+ e);
+		}//,주의
+		});
+		
+	}//ajax통신
+	</script>
+</head>
+<body>
+  
+		<section>
+<h3> C R E A T E&nbsp;&nbsp;&nbsp;A C C O U N T </h3>
+	<form action="join.do" method="get">
+	
+	<table border = "1" id="join">
+		<tr>
+			<td class="lbl"> <label for ="id"> ID </label> </td>
+			<td class="cont"> 
+			<input type="text" id = "id" name="id" value ="" /> 
+			<input class="btn1" type="button" value="Check!" id="id_check" >
+			<br>
+			<span id="msg1" class="error"></span>
+			</td>
+		</tr>		
+		<tr>
+			<td class="lbl"> <label for ="pw">&nbsp;&nbsp;PASSWORD </label> </td>
+			<td class="cont"> <input type ="password" id = "pw" name="pw" value ="" /> </td>
+		</tr>		
+		<tr>
+			<td class="lbl"> <label for ="name"> NAME </label> </td>
+			<td class="cont"> <input type ="text" id = "name" name="name" value ="" /> </td>
+		</tr>		
+		<tr>
+			<td class="lbl"> <label for ="role"> ROLE </label> </td>
+			<td class="cont"> 
+			<input type ="radio" id = "role" name="role" value ="admin" /> admin
+			<input type ="radio" name="role" value ="user" /> user	
+			</td>
+		</tr>		
+		<tr>
+			<td colspan = "2" class="okbtn">
+				<input class="btn1" type = "submit" value = "CREATE">			
+				<input class="btn1" type = "reset" value = "CLEAR">		
+			</td>
+		</tr>		
+	</table>
+	
+	</form>
+	
+
+ 
+		</section>
+
+		
+</body>
+</html>

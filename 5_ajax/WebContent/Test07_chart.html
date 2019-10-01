@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>Highcharts Basic Line</title>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<script>
+	const log = console.log;
+	let xdata;
+	
+	jQuery(function() {
+		$("#btn1").click (function() {
+			$.ajax({
+				url: "chart_data.jsp",
+				dataType: "json",
+				success: function (data) {
+					//data는 local variable이라 밖에서 다룰 수 없어서 global한 xdata를 생성함! 
+					xdata = data;
+					//xdata = JSON.parse(data); -> 위에 dataType을 생략하려면 이렇게 쓰면 됨
+					chart(xdata); 
+				},
+				error: function (e) {
+					alert("error : " +e)
+				}
+			});
+		});
+	});
+	
+	//chart() 안에 넣고 window.onload에서 #btn1이 눌리면 함수를 호출하기
+	function chart(data) {
+
+		Highcharts.chart('container', {
+
+			title : {
+				text : 'Solar Employment Growth by Sector, 2010-2016'
+			},
+
+			subtitle : {
+				text : 'Source: thesolarfoundation.com'
+			},
+
+			yAxis : {
+				title : {
+					text : 'Number of Employees'
+				}
+			},
+			legend : {
+				layout : 'vertical',
+				align : 'right',
+				verticalAlign : 'middle'
+			},
+
+			plotOptions : {
+				series : {
+					label : {
+						connectorAllowed : false
+					},
+					pointStart : 2010
+				}
+			},
+
+					//data 다양하게 받기 위해 밖으로 빼서 data 객체에 넣었음
+			series : data,
+
+			responsive : {
+				rules : [ {
+					condition : {
+						maxWidth : 500
+					},
+					chartOptions : {
+						legend : {
+							layout : 'horizontal',
+							align : 'center',
+							verticalAlign : 'bottom'
+						}
+					}
+				} ]
+			}
+
+		});
+
+	}
+</script>
+
+<style type="text/css">
+#container {
+	min-width: 310px;
+	max-width: 800px;
+	height: 400px;
+	margin: 0 auto
+}
+</style>
+</head>
+<body>
+
+	<h3>Highcharts Basic Line</h3>
+	
+	<button id="btn1">Chart 보기</button>
+	<div id="container"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+<title>jQuery ajax load</title>
+<link rel="stylesheet" href="./css/table.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+const log = console.log;
+let xdata;
+
+jQuery(function () {
+	//#btn1이 click되면 호출되는 callback 함수
+
+	$("#btn1").click( function () {
+		//ajax 통신 code
+//		$.ajax( { ajax 통신을 위한 환경 설정 코드 기술 } );
+		$.ajax({ 
+			url: 'xml.jsp',
+			dataType: 'xml',
+			success:function(data){
+				//alert("success" + data);
+				//xdata = data;
+				displayXml(data);
+			},
+			error:function(error){
+				alert("error" + error);
+			}
+		});
+	});
+});
+
+function displayXml(data) {
+	//log(typeof(data)); ->data type Object인 것 확인 가능
+	
+	//jQuery는 forEach가 아니고 each
+//	$(data).each((i) => {log(i)}); -> 이렇게 하면 index가 나옴
+
+//	$(data).each((i,item) => {log(item)}); -> colsole에 잘 찍히는 것 확인함
+
+	let tag="<br/><table class='tablea'>";
+	tag += "<tr><th>id</th> <th>이름</th> <th>email</th> </tr>";
+	
+	let users = $(data).find("user");
+	
+	
+	$(users).each((i,item) => {
+		//.find() -> tag 찾기
+		//.text() -> 그 안에 있는 data 데려오기
+		tag+= "<tr><td> ";
+		tag+= $(item).find("id").text();
+		tag+= " </td><td> ";
+		tag+= $(item).find("name").text();
+		tag+= " </td><td> "
+		tag+= $(item).find("email").text();
+		tag+= " </td></tr>";
+		
+	});
+	
+	tag+= "</table>";
+	$("#demo").html(tag);
+
+}
+
+
+</script>
+
+<style type="text/css">
+
+#demo{
+	width: 700px;
+	height: 400px;
+	overflow: scroll;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<h3>ajax getData(xml)</h3>
+<button id="btn1"> getData(xml)</button>
+<div id="demo"></div>
+
+<pre>
+client => 서버로 요청
+
+- 주소창(url창)을 통해
+- link tag를 통해
+- submit button을 통해
+- Ajax => XMLHttpRequest 객체 이용 (background에서 작업함)
+</pre>
+</body>
+</html>

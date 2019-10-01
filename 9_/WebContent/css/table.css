@@ -1,0 +1,43 @@
+@charset "UTF-8";
+    h1{
+      text-align: center;
+      font-family: Open;
+    }
+    h1:hover{
+      color: red;
+      text-decoration: underline;
+      text-transform: capitalize;
+      text-shadow: 3px 5px 10px orange; /* x y 번짐정도    p145  */
+    }
+    table {
+	   margin: 0 auto; /* x축   y축 의미  항상 가운데 */
+	   border: 2px solid black;
+	   border-collapse: collapse; 
+    }
+    th {
+       background: #333333;
+       color: #ffcc00;
+    }
+    .tablea tr:nth-child(2n) {
+       background: gray;
+       color: black;
+    }
+    .tablea tr:nth-child(2n+1) {
+       background: white;
+       color: black;
+    }
+    .tablea {
+	    width: 300px; /* height X */
+    }
+    .tablea td {  /*table.tablea > tbody>tr>td*/
+	   text-align: center;
+    }
+    .tablea > tbody>tr>td:nth-child(2) {  /*table.tablea > tbody>tr>td*/
+	   text-align: right;
+    }
+    .tablea > tbody>tr:hover {
+	   background: orange;
+	   font-family:Pacifico;
+	   font-size: 120%; /*em  ~배 */
+	   font-weight: bold;
+    }
